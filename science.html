@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Science – KISB Learning Space</title><link rel="icon" href="lib/logo.jpg"><style>
+:root{--navy:#123C63;--green:#37875D;--greend:#2b6e4a;--gold:#E5AC43;--grey:#F1F5F9;--bg:#ffffff;--bg2:#f1f5f9;--fg:#1b2733;--muted:#5b6b7c;--line:#d6dee8;--card:#ffffff;--hdr:#123C63;--soft:#eef3f8;--ttl:#123C63;--link:#2b6e4a;--bl:#123C63;--gr:#37875D;--ye:#E5AC43}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1720;--bg2:#0f1720;--fg:#e6edf3;--muted:#9fb0c2;--line:#2a3a4a;--card:#16212d;--hdr:#0b2a47;--soft:#1a2836;--grey:#1a2836;--ttl:#cfe3f7;--link:#6fcf9b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1720;--bg2:#0f1720;--fg:#e6edf3;--muted:#9fb0c2;--line:#2a3a4a;--card:#16212d;--hdr:#0b2a47;--soft:#1a2836;--grey:#1a2836;--ttl:#cfe3f7;--link:#6fcf9b;color-scheme:dark}
+
+*{box-sizing:border-box}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+header.site{background:var(--hdr);color:#fff;border-bottom:3px solid var(--gold);position:sticky;top:env(safe-area-inset-top,0px);z-index:50;box-shadow:none}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hdr);z-index:60}
+header.site .wrap{display:flex;align-items:center;gap:14px;min-height:64px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo{box-sizing:border-box;width:48px;height:48px;background:#fff;border-radius:8px;display:grid;place-items:center;flex:none;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.25)}
+.logo img{width:42px;height:42px;object-fit:contain;display:block;margin:0}
+.brand b{font-size:19px;line-height:1.15;display:block;color:#fff;letter-spacing:.005em}.brand small{font-size:11.5px;opacity:.85;letter-spacing:.03em;display:block;color:#fff}
+.mnav{display:flex;gap:4px;margin-left:8px;align-items:stretch}
+.mnav>a,.mnav .dd>a{color:#fff;text-decoration:none;font-size:14.5px;font-weight:600;padding:8px 12px;border-bottom:3px solid transparent;margin-bottom:-3px;display:block;cursor:pointer}
+.mnav>a:hover,.mnav .dd>a:hover{background:rgba(255,255,255,.1);border-radius:4px 4px 0 0}
+.mnav a.on{border-bottom-color:var(--gold)}
+.dd{position:relative;display:inline-block}
+.mega{display:none;position:absolute;left:0;top:100%;background:var(--card);color:var(--fg);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 12px 30px rgba(0,0,0,.25);padding:14px 18px;min-width:260px;grid-template-columns:1fr;gap:2px;z-index:70;max-height:72vh;overflow:auto}
+.mega.two{width:min(560px,92vw);grid-template-columns:1fr 1fr;gap:2px 22px}
+.dd:hover .mega,.dd:focus-within .mega{display:grid}
+.mega .h{grid-column:1/-1;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--link);font-weight:700;margin-bottom:4px}
+.mnav .mega a{color:var(--fg);padding:6px 4px;border:0;margin:0;font-size:14.5px;font-weight:600;border-radius:4px;text-decoration:none;display:block}
+.mnav .mega a:hover{background:var(--soft);color:var(--ttl)}
+.mega a small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.mega .soon{display:block;padding:4px 0;font-size:14.5px;color:var(--muted)}.mega .soon em{font-style:normal;font-size:11px;border:1px solid var(--line);border-radius:999px;padding:0 7px;margin-left:6px}
+.sbox{margin-left:auto;display:flex;align-items:stretch;position:relative;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:8px;min-width:0}
+.sbox select{all:unset;box-sizing:border-box;color:#fff;font-size:13.5px;font-weight:600;padding:8px 26px 8px 12px;border-right:1px solid rgba(255,255,255,.3);cursor:pointer;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 10px center}
+.sbox select option{color:#111}
+.sbox .f{display:flex;align-items:center;gap:8px;padding:0 12px;min-width:190px;margin:0}
+.sbox input{all:unset;color:#fff;font-size:14px;width:100%;padding:8px 0}.sbox input::placeholder{color:rgba(255,255,255,.7)}
+.res{display:none;position:absolute;right:0;top:calc(100% + 8px);width:min(440px,92vw);background:var(--card);color:var(--fg);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 12px 30px rgba(0,0,0,.25);padding:6px;z-index:80;max-height:70vh;overflow:auto}
+.res.on{display:block}.res a{display:flex;justify-content:space-between;align-items:center;gap:10px;text-decoration:none;padding:8px 10px;border-radius:6px;font-size:14.5px;font-weight:600;color:var(--fg)}.res a:hover,.res a.sel{background:var(--soft)}
+.res a span{font-size:12px;font-weight:600;color:#fff;background:var(--green);border-radius:999px;padding:1px 9px;white-space:nowrap}.res a span.sc{background:var(--navy)}
+.res p{margin:8px 10px;color:var(--muted);font-size:14px}
+.tg{all:unset;box-sizing:border-box;cursor:pointer;width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;font-size:17px;flex:none}.tg:hover{background:rgba(255,255,255,.22)}.tg:focus-visible{outline:2px solid var(--gold)}
+footer.site{margin-top:48px;background:var(--hdr);color:rgba(255,255,255,.85);font-size:13px;text-align:left;padding:0}
+footer.site .wrap{padding-top:18px;padding-bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;min-height:0}
+footer.site b{color:#fff}footer.site .ctx{display:flex;gap:6px;flex-wrap:wrap}footer.site .ctx span+span:before{content:"›";margin-right:6px;opacity:.6}
+footer.site a{color:#fff;text-decoration:none}footer.site a:hover{text-decoration:underline}
+@media(max-width:860px){.mnav{position:relative}.dd{position:static}.mega,.mega.two{width:min(560px,calc(100vw - 24px))}.sbox{order:2;margin-left:0;width:100%}.sbox .f{flex:1}.brand b{font-size:17px}.mnav{margin-left:0}}
+
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,"Segoe UI",system-ui,Calibri,Arial,sans-serif;font-size:16px;line-height:1.55}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--link)}
+h1{font-size:clamp(28px,4.4vw,42px);line-height:1.12;margin:8px 0 12px;color:var(--ttl);letter-spacing:-.01em}
+h2{font-size:22px;margin:0 0 4px;color:var(--ttl)}
+.hero{background:linear-gradient(180deg,var(--soft),var(--bg));border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:40px;padding-bottom:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.clock{display:inline-flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:6px 14px;font-size:14px;font-weight:600;margin-bottom:14px}.clock b{font-variant-numeric:tabular-nums;color:var(--ttl)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;padding:14px 16px}
+.stat b{font-size:28px;color:var(--ttl);display:block;line-height:1.1}.stat span{font-size:13px;color:var(--muted)}
+section.block{padding:36px 0 8px}
+.sub{color:var(--muted);margin:0 0 18px;font-size:14.5px}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:6px}
+.subj{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:box-shadow .15s,border-color .15s}
+.subj:hover{box-shadow:0 8px 24px rgba(18,60,99,.14);border-color:var(--navy)}
+.subj .top{height:96px;display:grid;place-items:center;color:#fff;font-size:40px;font-family:"Cambria Math",Cambria,serif;background:var(--navy);border-bottom:4px solid var(--gold)}
+.subj.sci .top{background:var(--green)}
+.subj .bd{padding:14px 18px 16px}.subj h3{margin:0 0 4px;font-size:19px;color:var(--fg)}.subj p{margin:0 0 10px;font-size:14px;color:var(--muted)}
+.subj .go{font-weight:700;font-size:14px;color:var(--link)}
+.subj.off{opacity:.6;pointer-events:none}.subj.off .top{background:#8b9aab}.subj.off .go{color:var(--muted)}
+.subhead{background:linear-gradient(180deg,var(--soft),var(--bg));border-bottom:1px solid var(--line)}.subhead .wrap{padding-top:10px;padding-bottom:26px}
+.crumbs{font-size:13.5px;color:var(--muted);padding:16px 0 4px}.crumbs a{text-decoration:none;color:var(--link);font-weight:600}
+.topic{display:grid;grid-template-columns:64px minmax(0,1fr);gap:6px 16px;padding:18px 0;border-top:1px solid var(--line);scroll-margin-top:90px}
+.topic .num{width:52px;height:52px;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px;border-bottom:4px solid var(--gold)}
+.topic h3{margin:0;font-size:19px}.topic h3 a{text-decoration:none;color:var(--fg)}
+.topic .meta{font-size:13.5px;margin:2px 0 8px;color:var(--muted)}.topic .meta a{color:var(--link);font-weight:700;margin-left:10px;text-decoration:none}
+.topic .inc{font-size:14.5px}.topic .inc b{color:var(--muted);font-weight:600;margin-right:4px}
+.topic .inc a{color:var(--ttl);text-decoration:none;font-weight:600}.topic .inc a:hover{text-decoration:underline}.topic .inc span{color:var(--line);margin:0 8px}
+.prog{display:inline-flex;align-items:center;gap:8px;margin-left:10px;vertical-align:middle}.prog u{display:inline-block;width:90px;height:6px;border-radius:99px;background:var(--line);overflow:hidden;text-decoration:none}.prog u i{display:block;height:100%;background:var(--green)}
+.soonchip{display:inline-block;font-size:11.5px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:0 9px;color:var(--muted);margin-left:8px}
+details{margin-top:8px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+summary{cursor:pointer;font-weight:700;font-size:14px;padding:8px 12px;color:var(--fg)}
+details .a{padding:4px 14px 12px;font-size:15px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+</style></head><body><!--kisb-v2--><header class="site"><div class="wrap">
+<a class="brand" href="index.html"><span class="logo"><img alt="Kincaid International School of Bangkok logo" src="lib/logo.jpg"></span><span><b>KISB Learning Space</b><small>Kincaid International School of Bangkok</small></span></a>
+<div class="mnav">
+<a href="index.html">Home</a>
+<span class="dd"><a tabindex="0" class="on">Subjects ▾</a><div class="mega"><a href="mathematics.html">Mathematics<small>18 topics · 92 lessons</small></a><a href="science.html">Science<small>Physics · coming soon</small></a><span class="soon">More subjects<em>soon</em></span></div></span>
+<span class="dd"><a tabindex="0">Topics ▾</a><div class="mega two"><div class="h">Science topics</div><a href="science.html#t1">01 · Space, time and motion<small>Coming soon</small></a><a href="science.html#t2">02 · The particulate nature of matter<small>Coming soon</small></a><a href="science.html#t3">03 · Wave behaviour<small>Coming soon</small></a><a href="science.html#t4">04 · Fields<small>Coming soon</small></a><a href="science.html#t5">05 · Nuclear and quantum physics<small>Coming soon</small></a></div></span>
+</div>
+<form class="sbox" id="k_sf" onsubmit="return false" role="search">
+<select id="k_ss" aria-label="Subject"><option value="all">All subjects</option><option value="maths">Mathematics</option><option value="science" selected>Science</option></select>
+<label class="f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="k_sq" autocomplete="off" placeholder="Topic or keyword (press /)" aria-label="Topic or keyword"></label>
+<div class="res" id="k_res"></div>
+</form>
+<button class="tg" id="k_tg" type="button" aria-label="Switch light or dark theme" title="Light / dark theme">☾</button>
+</div></header><main>
+<div class="subhead"><div class="wrap"><div class="crumbs"><a href="index.html">Home</a> › Science</div><div class="eyebrow">Physics · Grades 10–12 · IB Diploma Programme</div><h1 style="margin-bottom:6px">Science</h1><p class="sub" style="margin:0">Physics lessons will follow the same structure as Mathematics: notes, interactive simulations, practice, assessment and a practical.</p></div></div>
+<div class="wrap"><section class="block"><h2>Physics topics</h2><div class="topic" id="t1"><div class="num">01</div><div><h3>Space, time and motion<span class="soonchip">Coming soon</span></h3><div class="meta">Kinematics, forces, momentum, energy and projectile motion.</div></div></div><div class="topic" id="t2"><div class="num">02</div><div><h3>The particulate nature of matter<span class="soonchip">Coming soon</span></h3><div class="meta">Thermal energy, gases and the kinetic model.</div></div></div><div class="topic" id="t3"><div class="num">03</div><div><h3>Wave behaviour<span class="soonchip">Coming soon</span></h3><div class="meta">Waves, sound, light, diffraction and interference.</div></div></div><div class="topic" id="t4"><div class="num">04</div><div><h3>Fields<span class="soonchip">Coming soon</span></h3><div class="meta">Gravitational, electric and magnetic fields and circuits.</div></div></div><div class="topic" id="t5"><div class="num">05</div><div><h3>Nuclear and quantum physics<span class="soonchip">Coming soon</span></h3><div class="meta">Atoms, radioactivity and quantum ideas.</div></div></div></section></div>
+</main><footer class="site"><div class="wrap"><div class="ctx"><span>Science</span><span><b>Topic: choose a topic</b></span></div><span id="f-copy">© 2026 KISB Learning Space · Kincaid International School of Bangkok. All rights reserved.</span></div></footer><script id="kisb-core">(function(){var R="",SUBJ="science",SCI=[{"t": "Space, time and motion", "g": "Physics", "k": "kinematics forces momentum energy projectile motion mechanics", "u": "science.html#t1"}, {"t": "The particulate nature of matter", "g": "Physics", "k": "thermal gas temperature heat kinetic", "u": "science.html#t2"}, {"t": "Wave behaviour", "g": "Physics", "k": "waves sound light diffraction interference", "u": "science.html#t3"}, {"t": "Fields", "g": "Physics", "k": "gravity electric magnetic field circuit", "u": "science.html#t4"}, {"t": "Nuclear and quantum physics", "g": "Physics", "k": "nuclear atom radioactivity quantum", "u": "science.html#t5"}];
+function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+window.KISB={store:store,mem:{},done:function(){return store('kisb-done')||KISB.mem},setDone:function(m){KISB.mem=m;store('kisb-done',m)}};
+function theme(t){document.documentElement.setAttribute('data-theme',t);var b=document.getElementById('k_tg');if(b)b.textContent=t=='dark'?'\u2600':'\u263e'}
+var pref=store('kisb-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');theme(pref);
+var tg=document.getElementById('k_tg');if(tg)tg.addEventListener('click',function(){var t=document.documentElement.getAttribute('data-theme')=='dark'?'light':'dark';theme(t);store('kisb-theme',t)});
+var fc=document.getElementById('f-copy');if(fc)fc.textContent='\u00a9 '+new Date().getFullYear()+' KISB Learning Space \u00b7 Kincaid International School of Bangkok. All rights reserved.';
+/* search */
+var D=null,inp=document.getElementById('k_sq'),ss=document.getElementById('k_ss'),rs=document.getElementById('k_res'),sel=-1;
+function n(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+function load(cb){if(window.KISB_SEARCH){D=window.KISB_SEARCH;cb();return}var s=document.createElement('script');s.src=R+'lib/search-data.js';s.onload=function(){D=window.KISB_SEARCH||[];cb()};s.onerror=function(){D=[];cb()};document.head.appendChild(s)}
+function find(){var v=n(inp.value).replace(/[^a-z0-9 ]+/g,' ').trim();sel=-1;if(!v){rs.classList.remove('on');return}
+ if(!D){load(find);return}
+ var tk=v.split(/\s+/),sub=ss.value,out=[];
+ function score(d,sj){var t=n(d.t),k=n(d.k+' '+d.g),sc=0;for(var i=0;i<tk.length;i++){var a=t.indexOf(tk[i])>=0,b=k.indexOf(tk[i])>=0;if(!a&&!b)return;sc+=a?5:1}out.push([sc,d,sj])}
+ if(sub!='science')D.forEach(function(d){if(d.g!='Home')score(d,'maths')});
+ if(sub!='maths')SCI.forEach(function(d){score(d,'science')});
+ out.sort(function(a,b){return b[0]-a[0]});out=out.slice(0,10);
+ rs.innerHTML=out.length?out.map(function(o){var d=o[1];return '<a href="'+R+d.u+'">'+d.t+' <span class="'+(o[2]=='maths'?'':'sc')+'">'+(o[2]=='maths'?'Mathematics':'Science')+' \u00b7 '+d.g+'</span></a>'}).join(''):'<p>No matching topics. Try another word or subject.</p>';rs.classList.add('on')}
+if(inp){inp.addEventListener('input',find);ss.addEventListener('change',find);inp.addEventListener('focus',function(){if(!D)load(function(){})});
+inp.addEventListener('keydown',function(e){var as=rs.querySelectorAll('a');if(e.key=='ArrowDown'||e.key=='ArrowUp'){e.preventDefault();if(!as.length)return;sel=(sel+(e.key=='ArrowDown'?1:-1)+as.length)%as.length;as.forEach(function(a,i){a.classList.toggle('sel',i==sel)});as[sel].scrollIntoView({block:'nearest'})}else if(e.key=='Enter'){var a=as[sel>=0?sel:0];if(a)location.href=a.href}else if(e.key=='Escape'){rs.classList.remove('on');inp.blur()}});
+document.addEventListener('click',function(e){if(!document.getElementById('k_sf').contains(e.target))rs.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(e.key=='/'&&!/INPUT|SELECT|TEXTAREA/.test((document.activeElement||{}).tagName||'')){e.preventDefault();inp.focus()}})}
+})();</script></body></html>
